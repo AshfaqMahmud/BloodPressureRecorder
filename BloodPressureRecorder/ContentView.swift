@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var userLoggedIn = DataBaseModel()
     var body: some View {
-        VStack {
-            Text("Hello, world!")
+        if !userLoggedIn.signInSuccess {
+            Login()
         }
-        .padding()
+        else {
+            DemoView()
+        }
     }
 }
 
