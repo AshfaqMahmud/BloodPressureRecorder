@@ -104,12 +104,12 @@ struct Registration: View {
                                 return
                             }
                         }
-                        /*let ref = Database.database().reference()
+                        let ref = Database.database().reference()
                         ref.child("users").child(phone).child("Fullname").setValue(fullname)
                         ref.child("users").child(phone).child("Password").setValue(password)
                         ref.child("users").child(phone).child("Age").setValue(age)
                         ref.child("users").child(phone).child("Gender").setValue(selectedgender)
-                        ref.child("users").child(phone).child("Email").setValue(email)*/
+                        ref.child("users").child(phone).child("Email").setValue(email)
                     }
                 },label: {
                     Text("Submit")
