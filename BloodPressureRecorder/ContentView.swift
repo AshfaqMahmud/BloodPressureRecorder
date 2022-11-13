@@ -7,11 +7,25 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    @StateObject var userLoggedIn = DataBaseModel()
+    //@StateObject var userLoggedIn = DataBaseModel()
+    @State var isLoggedIn : Bool = false
+    
+    //sharedprefences or userdefaults to get the login state
+    let defaults = UserDefaults.standard
+    var status : Bool {
+        get {
+            return defaults.bool(forKey: "loggedIn")
+        }
+    }
     var body: some View {
-        if !userLoggedIn.signInSuccess {
-            Login()
+        
+        //isLoggedIn for changing view
+        //status for saving login status
+        
+        if !isLoggedIn && !status {
+            Login(isLoggedIn: $isLoggedIn)
         }
         else {
             DemoView()

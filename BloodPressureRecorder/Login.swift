@@ -10,12 +10,14 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
+
 struct Login: View {
     @State private var email = ""
     @State private var password = ""
     @State private var showRegistrationView = false
+    @Binding var isLoggedIn: Bool
+    let savestatus = UserDefaults.standard
     
-    //@EnvironmentObject var viewmodel : DataBaseModel
     var body: some View {
         
         NavigationView{
@@ -57,16 +59,26 @@ struct Login: View {
                                     debugPrint(error.localizedDescription)
                                     //self.handleFireBaseAuthError (error : error)
                                     //self.activityIndicator.stopAnimating()
+                                    savestatus.set(false, forKey: "loggedIn")
                                 }
                                 else
                                 {
                                     print("Logged In!")
-                                    //self.signInSuccess = true
+                                    isLoggedIn = true
+                                    
+                                    //sharedpreference
+                                    
+                                    savestatus.set(true, forKey: "loggedIn")
+                                    let defaults = UserDefaults.standard
+                                    defaults.set(email, forKey: "usermail")
+                                    //sharedpreference ends
+                                    
+                                    DemoView()
+                                    
                                 }
                             }
-                            DemoView()
+                            
                         }
-                        //radius = 2000
                         
                     }, label: {
                         Text("Login")
@@ -88,7 +100,6 @@ struct Login: View {
                 
             }
             .ignoresSafeArea()
-            //.environmentObject(viewmodel)
             
         }
         
@@ -98,6 +109,16 @@ struct Login: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login()
+        Group{
+            Login(isLoggedIn: .constant(true))
+            Login(isLoggedIn: .constant(false))
+        }
+        
     }
 }
+
+
+
+
+
+        
