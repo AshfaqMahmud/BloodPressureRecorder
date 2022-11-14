@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-
+import Foundation
+import FirebaseAuth
+import FirebaseDatabase
 struct RecordInsert: View {
     @State private var systole = ""
     @State private var diastole = ""
@@ -43,10 +45,32 @@ struct RecordInsert: View {
                         .background(Color.orange.opacity(1))
                         .cornerRadius(10)
                     
-                    Button("Add Record"){
+                    Button(action: {
                         
-                    }
-                    .foregroundColor(.black)
+                        let user = Auth.auth().currentUser
+                        var coun : UInt = 0
+                        var count = ""
+                        
+                        if let user = user
+                        {
+                            //viewmodel.register(fullname: fullname, email: email, age: age, password: password, phone: phone, gender: selectedgender)
+                            //viewmodel.signUp(email: email, password: password)
+                            let uid  = user.uid
+                            let ref = Database.database().reference()
+                            ref.observeSingleEvent(of: .value, with: {snapshot in
+                                    coun += snapshot.childrenCount
+                                count = String(coun)
+                                ref.child("users details").child(uid).child(count).child("Systole").setValue(systole)
+                                ref.child("users details").child(uid).child(count).child("Diastole").setValue(diastole)
+                                ref.child("users details").child(uid).child(count).child("BPM").setValue(bpm)
+                                ref.child("users details").child(uid).child(count).child("Comment").setValue(comment)
+                                })
+                            
+                            
+                        }
+                    },label: {
+                        Text("Add Record")
+                    })                    .foregroundColor(.black)
                     .frame(width:200 ,height: 50)
                     .background(Color.yellow.opacity(1))
                     .cornerRadius(10)

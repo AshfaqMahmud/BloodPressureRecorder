@@ -73,7 +73,17 @@ struct Login: View {
                                     defaults.set(email, forKey: "usermail")
                                     //sharedpreference ends
                                     
-                                    DemoView()
+                                    let ref = Database.database().reference()
+                                    let child = ref.child("users")
+                                    child.observeSingleEvent(of: .value, with: {snapshot in
+                                        if snapshot.hasChild(email)
+                                        {
+                                            let pass = snapshot.childrenCount
+                                            print(pass)
+                                        }
+                                    })
+                                    
+                                    RecordInsert()
                                     
                                 }
                             }

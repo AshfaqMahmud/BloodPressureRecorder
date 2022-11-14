@@ -28,7 +28,8 @@ struct ContentView: View {
             Login(isLoggedIn: $isLoggedIn)
         }
         else {
-            DemoView()
+            
+            RecordInsert()
         }
     }
 }
