@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28CDDA3CA64ACFE7A4772C01 /* Pods_BloodPressureRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBC743E35A06E0B8178F595 /* Pods_BloodPressureRecorder.framework */; };
+		FC4507B92931EA1C00219691 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4507B82931EA1C00219691 /* UserProfile.swift */; };
+		FC4507C129321AB400219691 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4507C029321AB400219691 /* UserViewModel.swift */; };
+		FC4507C72932338800219691 /* ObjectDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4507C62932338800219691 /* ObjectDemo.swift */; };
+		FC855B4629325B7300CCF2FD /* User2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC855B4529325B7300CCF2FD /* User2.swift */; };
+		FC855B4829325C5500CCF2FD /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC855B4729325C5500CCF2FD /* DemoList.swift */; };
 		FCA202A529203C9E00C167B2 /* BloodPressureRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA202A429203C9E00C167B2 /* BloodPressureRecorderApp.swift */; };
 		FCA202A729203C9E00C167B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA202A629203C9E00C167B2 /* ContentView.swift */; };
 		FCA202A929203C9F00C167B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA202A829203C9F00C167B2 /* Assets.xcassets */; };
@@ -26,6 +31,11 @@
 		5BC94CE18CDDFF7C7E8ECF67 /* Pods-BloodPressureRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureRecorder.release.xcconfig"; path = "Target Support Files/Pods-BloodPressureRecorder/Pods-BloodPressureRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		AFBC743E35A06E0B8178F595 /* Pods_BloodPressureRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodPressureRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82AA643A29AE2BD34D1683B /* Pods-BloodPressureRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureRecorder.debug.xcconfig"; path = "Target Support Files/Pods-BloodPressureRecorder/Pods-BloodPressureRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		FC4507B82931EA1C00219691 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FC4507C029321AB400219691 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		FC4507C62932338800219691 /* ObjectDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDemo.swift; sourceTree = "<group>"; };
+		FC855B4529325B7300CCF2FD /* User2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User2.swift; sourceTree = "<group>"; };
+		FC855B4729325C5500CCF2FD /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
 		FCA202A129203C9E00C167B2 /* BloodPressureRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodPressureRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA202A429203C9E00C167B2 /* BloodPressureRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureRecorderApp.swift; sourceTree = "<group>"; };
 		FCA202A629203C9E00C167B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +113,11 @@
 				FCA202BC292049D000C167B2 /* Login.swift */,
 				FCA202C0292061F000C167B2 /* Extensions.swift */,
 				FCA202C22920658900C167B2 /* DemoView.swift */,
+				FC4507B82931EA1C00219691 /* UserProfile.swift */,
+				FC4507C029321AB400219691 /* UserViewModel.swift */,
+				FC4507C62932338800219691 /* ObjectDemo.swift */,
+				FC855B4529325B7300CCF2FD /* User2.swift */,
+				FC855B4729325C5500CCF2FD /* DemoList.swift */,
 			);
 			path = BloodPressureRecorder;
 			sourceTree = "<group>";
@@ -230,14 +245,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4507C72932338800219691 /* ObjectDemo.swift in Sources */,
 				FCA202BD292049D000C167B2 /* Login.swift in Sources */,
 				FCA202B5292042C800C167B2 /* RecordInsert.swift in Sources */,
 				FCA202A729203C9E00C167B2 /* ContentView.swift in Sources */,
 				FCA202C1292061F000C167B2 /* Extensions.swift in Sources */,
 				FCA202C32920658900C167B2 /* DemoView.swift in Sources */,
 				FCA202A529203C9E00C167B2 /* BloodPressureRecorderApp.swift in Sources */,
+				FC855B4629325B7300CCF2FD /* User2.swift in Sources */,
 				FCA202B9292047A600C167B2 /* DataBaseModel.swift in Sources */,
+				FC4507C129321AB400219691 /* UserViewModel.swift in Sources */,
+				FC4507B92931EA1C00219691 /* UserProfile.swift in Sources */,
 				FCA202BB292049C100C167B2 /* Registration.swift in Sources */,
+				FC855B4829325C5500CCF2FD /* DemoList.swift in Sources */,
 				FCA202B72920437700C167B2 /* UpdateRecords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

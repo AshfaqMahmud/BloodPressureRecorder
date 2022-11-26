@@ -56,14 +56,14 @@ struct RecordInsert: View {
                             //viewmodel.register(fullname: fullname, email: email, age: age, password: password, phone: phone, gender: selectedgender)
                             //viewmodel.signUp(email: email, password: password)
                             let uid  = user.uid
-                            let ref = Database.database().reference()
+                            let ref = Database.database().reference().child("users details").child(uid)
                             ref.observeSingleEvent(of: .value, with: {snapshot in
                                     coun += snapshot.childrenCount
                                 count = String(coun)
-                                ref.child("users details").child(uid).child(count).child("Systole").setValue(systole)
-                                ref.child("users details").child(uid).child(count).child("Diastole").setValue(diastole)
-                                ref.child("users details").child(uid).child(count).child("BPM").setValue(bpm)
-                                ref.child("users details").child(uid).child(count).child("Comment").setValue(comment)
+                                ref.child(count).child("Systole").setValue(systole)
+                                ref.child(count).child("Diastole").setValue(diastole)
+                                ref.child(count).child("BPM").setValue(bpm)
+                                ref.child(count).child("Comment").setValue(comment)
                                 })
                             
                             
