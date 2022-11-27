@@ -7,13 +7,22 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseDatabase
+import FirebaseAuth
 
 class UserViewModel: ObservableObject {
     
     @Published var users = [User2]()
     private var db = Firestore.firestore()
+    var uid = ""
     func fetchdata() {
-        db.collection("userdetails").addSnapshotListener { (querySnapshot, error) in
+        let defaults = UserDefaults.standard
+        
+        var user = Auth.auth().currentUser
+        if let user = user {
+            uid = user.uid
+        }
+        
+        db.collection(uid).addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No Record")
                 return

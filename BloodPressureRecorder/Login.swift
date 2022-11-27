@@ -69,8 +69,8 @@ struct Login: View {
                                     //sharedpreference
                                     
                                     savestatus.set(true, forKey: "loggedIn")
-                                    let defaults = UserDefaults.standard
-                                    defaults.set(email, forKey: "usermail")
+                                    //let defaults = UserDefaults.standard
+                                    //defaults.set(email, forKey: "usermail")
                                     //sharedpreference ends
                                     
                                     let ref = Database.database().reference()
@@ -82,7 +82,9 @@ struct Login: View {
                                             print(pass)
                                         }
                                     })
-                                    
+                                    let user = Auth.auth().currentUser
+                                    //let defaults = UserDefaults.standard
+                                    //defaults.set(user, forKey: "userid")
                                     RecordInsert()
                                     
                                 }

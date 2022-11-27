@@ -9,6 +9,9 @@ import SwiftUI
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseFirestore
+
+
 struct RecordInsert: View {
     @State private var systole = ""
     @State private var diastole = ""
@@ -66,7 +69,16 @@ struct RecordInsert: View {
                                 ref.child(count).child("Comment").setValue(comment)
                                 })
                             
-                            
+                            let db = Firestore.firestore()
+                            db.collection(uid).addDocument(data: ["Systole":systole, "Diastole":diastole, "BPM":bpm, "Comment":comment]) { error in
+                                if error == nil {
+                                    //no errors
+                                    
+                                }
+                                else {
+                                    //handle errors
+                                }
+                            }
                         }
                     },label: {
                         Text("Add Record")
@@ -77,7 +89,7 @@ struct RecordInsert: View {
                     
                     //.navigate(to: Registration(), when: $showRegistrationView)
                     //NavigationLink("", destination: Registration, isActive: $showRegistrationView)
-                    NavigationLink(destination: UpdateRecords(), label: {
+                    NavigationLink(destination: DemoList(), label: {
                         Text("View Records")
                             .foregroundColor(.black)
                             .frame(width: 200, height: 50)
